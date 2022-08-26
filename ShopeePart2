@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1></h1>
+    <div id="dashBoard">
+        <img id="icon" src="data:image/png;base64,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" alt="">
+        <p id="iconPara">Shop World</p>
+        <img id="cartImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQWvWB-eMztvlNB4e0l_3cHxRnLXuEFWK-sQ&usqp=CAU" alt="" >
+        <p id="cartItems">Cart items(0)</p>
+    </div>
+    <img id="titleImage" src="https://cdn.pixabay.com/photo/2017/03/01/09/11/shop-2107911_960_720.png" alt="ShopImage">
+    <h2 id="productName1">Discover New Bags</h2>
+    <div id="container1">
+        <div id="bags1">
+        <img id="productImage1" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/9137533/2019/4/16/4187457d-8487-4831-b88b-a964190a325e1555417631279-Tommy-Hilfiger-Water-resistance-Backpack-4221555417629689-2.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span id="productPrice1">2400</span>
+       <input id="productAdd1" onclick="add()" type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+        <div id="bags2">
+        <img id="productImage2" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/16513420/2021/12/14/7a1bde13-9d95-492b-870e-e47babcacab21639487153033WOMENMARKSPinkFloralPrintedPUOversizedStructuredSlingBag1.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span id="productPrice2">2400</span>
+       <input id="productAdd2" onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+        <div id="bags3">
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10686492/2019/12/27/5af25129-d12e-42eb-a522-f5fbad6de03d1577446294889-Safari-Unisex-Multi-Printed-Trolley-Bag-5361577446292003-1.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+        <div id="bags4">
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/5634501/2018/5/22/dd2b1e62-a832-45d4-b9b9-2531d74a50901526971054943-Impulse-Unisex-Navy-Blue--Grey-Thames-85-Litres-Rucksack-4121526971054829-1.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+        <div id="bags5">
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/7139898/2020/3/13/6a574ecb-55fd-41e5-b4b8-73757b92ef3c1584077050047-Puma-Unisex-Black-Phase-Laptop-Backpack-2101584077048775-1.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+    </div>
+    <br>
+    <br>
+    <h2 id="productName2">Discover New Watch</h2>
+    <div id="container2">
+        <div id="watch1">
+        <img id="productImage3" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/87329/2022/6/17/2c97306f-590d-4d26-93a7-5ae25b328b9c1655465482677-Titan-Women-Black-Dial-Watch-3701655465482473-1.jpg" alt="">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span id="productPrice3">2400</span>
+       <input id="productAdd1" onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+        <div>
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/18356332/2022/5/20/ab5a6cf8-319d-4fe2-8002-010eea58df2b1653044065579TommyHilfigerMenDialBlueStrapsAnalogueWatchTH1720016W1.jpg" alt="">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        
+        </div>
+        <div>
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/9460069/2019/12/20/8833d3de-23cb-45a4-9e79-10bb7bca12b91576838875738-Roadster-Men-Black-Analogue-and-Digital-Watch-MFB-PN-SM-1545-2.jpg" alt="">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+        <div>
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/14052058/2021/5/10/91817af1-1a1f-46c6-b11b-4c8f7bc6fcfb1620645828653FastrackSTUNNERS10MenBlackAnalogueWatch3254NM011.jpg" alt="">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        </div>
+    </div>
+    <br>
+    <br>
+    <h2 id="productName3">Jewels for you</h2>
+    <div id="container3">
+        <div>
+        <img id="productImage3" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10552302/2019/10/23/4385efb7-9f23-48ce-9be1-884ef35f02321571831404761-Carlton-London-Rose-Gold-Plated-Lariat-Necklace-855157183140-1.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        
+    </div>
+        <div>
+        <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/17905078/2022/6/15/ca209cdb-2f54-498c-88f9-cbb465e3da771655317032872IshhaaraBlueCrystalNecklace3.jpg">
+        <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span id="productPrice4">2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+        
+    </div>
+    <div>   
+    <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/10552196/2021/3/17/9c7a7e0e-d1da-47c2-98ff-729547e86ae51615972627354CarltonLondonRoseGold-PlatedLayeredLariatNecklace2.jpg">
+    <p id="productName1">Tommy Hilfiger</p>
+    <p>vintage Edition</p>
+    <span>2400</span>
+   <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+    
+</div>
+    <div>
+    <img id="" src="https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11312280/2020/1/24/5b41c2f2-098d-4113-aa5a-37459188d5b91579863181584-Carlton-London-Rose-Gold-Plated-CZ-Studded-Necklace-41157986-1.jpg">
+    <p id="productName1">Tommy Hilfiger</p>
+        <p>vintage Edition</p>
+        <span>2400</span>
+       <input onclick="add()"type="image" style="margin-left:30px" width="30px" height="20px" src="https://cdn.pixabay.com/photo/2016/10/17/08/27/add-to-cart-1747164__340.png">
+    </div>
+</div>
+<br>
+<br>
+<footer>
+    <img id="productFooterIcon"width="200px" style="margin-left:50px;" height="120px" src="data:image/png;base64,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">
+    <address>
+        <p id="productFooterAddress">Manhattan Street, 1st phase <br> Mumbai<br>Contact at shopworld@gmail.com</p>
+    </address>
+</footer>
+</body>
+</html>
+
+
+<!-- #dashBoard{
+    width: 1348px;
+    height: 50px;
+    background-color: rgb(255, 187, 0);
+    position: relative;
+    padding: 10px;
+    left: -7px;
+    top: -6px;
+}
+#icon{
+    position: absolute;
+    top: 16%;
+    left: 2%;
+    width: 30px;
+    height: 30px;
+}
+#iconPara{
+    position: absolute;
+    top: 45%;
+    left: 2%;
+    font-size: 11px;
+}
+#cartImage{
+    position: absolute;
+    top: 25%;
+    left: 88.5%;
+    width: 30px;
+    height: 30px;
+}
+#cartItems{
+    position: absolute;
+    top: 20%;
+    left: 91%;
+    font-size: 14px;
+}
+#titleImage{
+    width: 1100px;
+    padding: 0px 120px;
+    margin: 5px auto;
+    height: 300px;
+}
+.bagsImage{
+    width: 150px;
+    height: 180px;
+}
+#container1,#container2,#container3{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
+#container1 img,#container2 img,#container3 img{
+    width: 150px;
+    height: 180px;
+}
+#container1 p, #container2 p,#container3 p:nth-of-type(2){
+    text-align: left;
+    margin-left: 15%;;
+    color: gray;
+    font-size: 10px;
+}
+h2{
+    margin: 30px auto;
+}
+#productName1, #productName2, #productName3{
+    margin-left: 6%;
+}
+address p{
+    display: inline;
+    font-size: 20px;
+    margin-right: 20px;
+}
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+    width: 1348px;
+    background-color:rgb(255, 187, 0) ;
+} -->
+
+<!-- let n=0;
+function add(){
+    n++;
+    document.getElementById('cartItems').innerHTML ="Cart items("+n+")";
+} -->
