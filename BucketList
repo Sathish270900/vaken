@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        #reset{
+            text-align: center;
+        }
+        h2{
+            font-size: 16px;
+            margin: auto auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="">
+        <img id="bgImage" src="https://images.unsplash.com/photo-1592843997881-cab3860b1067?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGl3YWxpfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+        <h1 id="title"> My 2022 Bucket List </h1>
+        <div id="rel">
+        <input type="text" id="inputList">
+        <button id="addButton" onclick="addText()">Add</button>
+        </div>
+    </div>
+    <h1 id="heading1">Here's what you gotta do this year</h1>
+    <p id="heading2">The first think on your bucket list is to tick things of your <br> bucket list.So, go ahead buddy 😜</p>
+    <div id="about">    
+    </div>
+    <button id="resetButton" onclick="resetButton()"><h2 >Reset Bucket List</h2></button>
+</body>
+</html>
+
+<!-- body{
+    text-align: center;
+}
+#bgImage{
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+#title{
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    color: white;
+}
+#inputList{
+    position: absolute;
+    left: 32%;
+    top: 30%;
+    width: 370px;
+    height: 28px;
+    border-radius: 20px;
+    border: 2px solid green;
+
+}
+#addButton{
+    border: 2px solid green;
+    position: absolute;
+    background-color: green;
+    font-weight: bold;
+    left: 56%;
+    top: 29.8%;
+    width: 80px;
+    height: 36px;
+    border-radius: 20px;
+}
+#about{
+    width: 450px;
+    border-radius: 10px;
+    border:2px solid black;
+    min-height: 35px;
+    position: relative;
+    top: 60%;
+    padding: 5px 10px;
+    left: 32%;
+    /* max-height: 400px; */
+}
+#resetButton{
+    margin-top: 20px;
+    width: 160px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: green;
+} -->
+
+<!-- function addText(){
+    var x=document.getElementById('inputList').value;
+    var node=document.createElement('span');
+    var text=document.createTextNode(x);
+    document.getElementById('about').style.textAlign="left";
+    var add=document.getElementById('about');
+    add.appendChild(node.appendChild(text));
+    var img=document.createElement('img');
+    img.src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAAD29vb4+Pj8/Pz09PQjIyMEBAQmJiYfHx8MDAzv7+8KCgocHBwSEhLIyMirq6vj4+MZGRk9PT1fX1+xsbE1NTWNjY1mZmbPz8/f399aWlqnp6eDg4N9fX1UVFRBQUEwMDCQkJB1dXWenp5ISEjBwcG5ubnU1NT5t1QYAAAEx0lEQVR4nO3aiVbbOhAGYG1e4hU7C0kKJem9QN//CTsjO8SxzQ3pNbVQ/48lHAjnaDzSL9uJEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAXMu2DmXcYn2n/zyZ+Ws89is9CjbuX1jIVfnYxPcgoogIjuZx7KJ+AevYqz17nHs8n0NtOgXI193Cmtyu6BcrN3OOZmDlFzJvD3EOaWHXoFSjv5x7StNYcn5e82i7Mdljg2p8Cjdglveqo2nLuYU2pHzHkW+BNB42oloP+yX/nHtaU1sMGHvdzD2pCZjss8Pvcg5rSIGKkhxHT2yS8jhj2MPewpjRyFhPvhTcdFGrVq46qfZx7UFOiC6V+A/2LmF4DKWL8MR4x3ixA/89iBhEjbcT408FdNtwkSp8KHL9Q8ke1GYsYbxhxNxIx1dzDGhHo3/s/ipjBJv9oHFuBNJ4fdL0T3noJzlXsesVFbt6LSeNmeM839/GrRMxze/xvfU1hEDGRoxFTngd4wyuYoxGzqRxbgY3HTgs+HoJ6NdzkXb1Q6t422ny0B+VFaVHG3xyMmMb37kL64AsnjxcFxpvj0c2IabxcjHZ37enU5Op4WWAcFXLt4gI8uYjE5PqW0YuYaBOFh0pph0usLiJje+XZgwul4ijvdaD0b54V/QFGPJw7GGZXtoxyGKHLF6FTrRzuoRCr5s0gtKSSxX9sGaYfMQlnKEVMmppU/ckB3yx4C42IKnz/PS/9s5iYzvfuhKEZqtx+P5dptrckj7jCSP6wv9SqWVk0/naJUcQU+elFibpO6MmHvaDpqbiBXKg5LUftXPLQ7Fssotj2cCFLY6gthK47As0toqekW5nHebIIm/bVCTXw3uiADgAfDH6+tp/26KjTAXJGnNRFWIdUYZjUsbIzj5vHlfIkFGUtw0LWYVHzG2TCLKdQKql7VKKh7/QPioqlr8AILjpwLXsqmYXNOgyLnLYMxfHI0y5QPF81nfmE9BHb79I+aUV/CYxRgiu0RyKwD8oEypq7pp4HmbUV8lJb8yi5hQHPULM/2JoWdBT4iyrkCxGuXNjDYCvUNKObnxW307WFaAzv5GGSy7DmMKm4efTrgFtxJ2tbYZ7FbYXJsuI44apsz+y05MdmxqrUrkK3Alan4SIuFllb4RPPTw6QwKTfpF2e5wprihjVpKdqeqbthtFWKOiRj4xJU5dOx42mU/CcorSpkLaMoAnEF9kGEM9SWocRVVgKGyO2kEC0M5MXbVOhzWFtdJqmc5fVpcVjwjGZN9uB3PFyMnRxFVLKcopmdFJXyCKWq8C0i6zZUeiBAsfuizRT6X+aEo1jPeRVE3euGGSmaRntu2cx7QnpunO/vrPS+Ef+1Oc/uLUO2f7inGwrOufkbY2RXLp4u/fjuhVF8m78XoxzjbmBEU/DW9jdmpOrtwCcF7xfH1mpL93ARnm6VBw28Jbbqe4ydJXxzjz94hHTcRxvoEdv0N6PVCizrx8xHf1NkGy1BxHT8dQv0IuI6eptGY6+ovS/lN089Shi3pjuqzU7/xrIzHO7R2xdu9kyFWNsFzPvIuYNX9WWrz/nHgYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAzH4B9mAoNdDY85oAAAAASUVORK5CYII=";
+    img.style.width="30px";
+    img.style.height="20px";
+    img.style.position="absolute";
+    img.style.left="80%";
+    
+    add.appendChild(img);
+    add.appendChild(document.createElement('br'));
+}
+function resetButton(){
+    var div=document.getElementById('about');
+    div.innerHTML="";
+} -->
+
+
