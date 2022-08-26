@@ -1,0 +1,153 @@
+HTMl
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <button id="toggleButton" onclick="changeMode()">Dark mode</button>
+    <div id="clock-container">
+    <div id="clock">
+        <div id="second"></div>
+        <div id="minute"></div>
+        <div id="hour"></div>
+        <div id="center-point"></div>
+    </div>
+    <div id="time"><h2 id="time1"></h2></div>
+    <div id="date"><h3 id="date1"></h3></div>
+    </div>
+</body>
+</html>
+
+
+Css
+
+#toggleButton{
+    margin-top: 4%;
+    background-color: black;
+    border: 2px solid crimson;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+body{
+    text-align: center;
+}
+#second{
+    width:3px;
+    height: 123px;
+    background-color: crimson;
+    text-align: center;
+    margin: 0px auto;
+    transform-origin: bottom;
+}
+#hour{
+    width:3px;
+    height: 60px;
+    background-color: blue;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: -24.5%;
+    transform-origin: bottom;
+}
+#minute{
+    width:3px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: yellow;
+    text-align: center;
+    margin-top: -38%;
+    transform-origin: bottom;    
+}
+#clock{
+    margin: 5% auto;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 1px solid crimson;
+}
+#center-point{
+    /* position: absolute;
+    top: 33.5%;
+    left: 49.8%; */
+    width: 10px;
+    height: 10px;
+    background-color: crimson;
+    margin: 0 auto;
+   /* // margin-top: -1%; */
+    border-radius: 50%;
+}
+
+
+JS
+
+let num=0;
+function changeMode(){
+    if(num%2==0){
+        document.getElementById('time1').style.color="white";
+    document.body.style.backgroundColor="black";
+    document.getElementById('toggleButton').innerHTML="Light mode";
+    document.getElementById('date1').style.color="white";
+    
+    }
+    else if(num%2!=0){
+    document.body.style.backgroundColor="white";
+    document.getElementById('time1').style.color="black";
+    document.getElementById('toggleButton').style.backgroundColor= "white";
+    document.getElementById('toggleButton').style.color= "black";
+    document.getElementById('toggleButton').innerHTML="Dark mode";
+    document.getElementById('date1').style.color="black";
+    }
+    num++;
+}
+setInterval(() => {
+    d = new Date(); //object of date()
+    hr = d.getHours();
+    min = d.getMinutes();
+    sec = d.getSeconds();
+    date = d.getDate();
+    day =d.getDay();
+    month =d.getMonth();
+    switch(day){
+        case 1:{day="Monday";break;}
+        case 2:{day="Tuesday";break;}
+        case 3:{day="Wednesday";break;}
+        case 4:{day="Thursday";break;}
+        case 5:{day="Friday";break}
+        case 6:{day="Saturday";break;}
+        default:{day="Sunday";}
+    }
+    switch(month){
+        case 1:{month="Jan";break;}
+        case 2:{month="Feb";break;}
+        case 3:{month="Mar";break;}
+        case 4:{month="Apr";break;}
+        case 5:{month="May";break}
+        case 6:{month="Jun";break;}
+        case 7:{month="Jul";break;}
+        case 8:{month="Aug";break;}
+        case 9:{month="Sep";break;}
+        case 10:{month="Oct";break;}
+        case 11:{month="Nov";break}
+        default:{month="Dec";}
+    }
+    hr_rotation = 30 * hr + min / 2; //converting current tim  
+    min_rotation = 6 * min;
+    sec_rotation = 6 * sec;
+    min=min<10?"0" + min:min;
+    hr=hr<10?'0'+hr:hr;
+    hour.style.transform = `rotate(${hr_rotation}deg)`;
+    minute.style.transform = `rotate(${min_rotation}deg)`;
+    second.style.transform= `rotate(${sec_rotation}deg)`;
+    document.getElementById("time1").innerHTML=hr+ ":" + min;
+    document.getElementById('date1').innerHTML=day+":"+month+" "+date;
+}, 1000);
