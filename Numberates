@@ -1,0 +1,229 @@
+html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1 id="attemptsLabel">NO.OF.ATTEMPTS</h1>
+    <div id="count"><h2 id="attemptCount">10</h2></div>
+    <h1 id="title">NUMBERATES</h1>
+    <div id="Hr"></div>
+    <div id="content">
+        <h2 id="heading">Guess the number between 1 - 100</h2>
+        <label id="textLabel" for="textBox1">Enter the number:</label>
+        <input type="text" id="textBox" >
+        <button id="checkButton" onclick="output()">Check</button>
+    </div>
+    <p id="result"></p>
+</body>
+</html>
+
+
+win.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom right,pink ,blue) fixed ;
+            text-align: center;
+        }
+        #title{
+            margin-top: 8%;
+        }
+        #Hr{
+            border: 2px solid white;
+            text-align: center;
+            height: 0.2px;
+            margin: 5px auto;
+            width: 600px;
+        }
+        #content{
+    box-sizing: border-box;
+    margin: 40px auto;
+    width: 900px;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+p{
+    font-size: 30px;
+    color: crimson;
+}
+    </style>
+</head>
+<body>
+    <h1 id="title">NUMBERATES</h1>
+    <div id="Hr"></div>
+    <div id="content">
+        <img src="https://emojiguide.org/images/emoji/i/csr5kl1csxd8i.png">
+        <p>Congratulations, You Have Won <br>the game.</p>
+    </div>
+</body>
+</html>
+
+lose.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: linear-gradient(to bottom right,pink ,blue) fixed ;
+            text-align: center;
+        }
+        #title{
+            margin-top: 8%;
+        }
+        #Hr{
+            border: 2px solid white;
+            text-align: center;
+            height: 0.2px;
+            margin: 5px auto;
+            width: 600px;
+        }
+        #content{
+    box-sizing: border-box;
+    margin: 40px auto;
+    width: 900px;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+p{
+    font-size: 30px;
+    color: crimson;
+}
+    </style>
+</head>
+<body>
+    <h1 id="title">NUMBERATES</h1>
+    <div id="Hr"></div>
+    <div id="content">
+        <img src="https://emojiguide.org/images/emoji/c/1ikaa3bu5qk2c.png">
+        <p>Sorry better luck next time</p>
+    </div>
+</body>
+</html>
+
+style
+
+body{
+    background: linear-gradient(to bottom right,pink ,blue) fixed ;
+    text-align: center;
+}
+#attemptsLabel{
+    margin-left: 80%;
+}
+#title{
+    margin-top: -5px;
+}
+#Hr{
+    border: 2px solid white;
+    text-align: center;
+    color: linear-gradient(to bottom right, black);
+    height: 0.1px;
+    margin: 5px auto;
+    width: 600px;
+}
+#attemptCount{
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 40%;
+}
+#count{
+    position: relative;
+    left: 40%;
+    margin: 0 auto;
+    border: transparent;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: sandybrown;
+}
+#content{
+    box-sizing: border-box;
+    margin: 40px auto;
+    width: 900px;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+#heading{
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+#textLabel{
+    position:absolute;
+    top: 36%;
+    left: 18%;
+    font-size: 24px;
+    font-weight: bold;
+}
+#textBox{
+    background: linear-gradient(to bottom right , skyblue,sandybrown);
+    position:absolute;
+    border-bottom-right-radius:20px ;
+    border-top-right-radius:20px;
+    top: 35%;
+    left: 40%;
+    width: 350px;
+    height: 35px;
+}
+#checkButton{
+    position: absolute;
+    top: 65%;
+    text-align: center;
+    font-size: large;
+    border-radius: 5px;
+    left: 40%;
+    width: 180px;
+    height: 60px;
+    background-color: salmon;
+}
+
+
+script
+
+let x=62;
+let count=10;
+function output(){
+    var val=document.getElementById("textBox").value;
+    if(count==0){
+        window.location.href= "lose.html";
+    }
+    if(val<x){
+        document.getElementById('result').innerHTML="Guessed Number is Samll";
+        document.getElementById('attemptCount').innerHTML=count--;
+    }
+    else if(val>x){
+        document.getElementById('result').innerHTML="Guessed Number is Greater";
+        document.getElementById('attemptCount').innerHTML=count--;
+    }
+    else{
+       window.location.href= "win.html";
+    }
+}
+
+
