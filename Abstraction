@@ -275,4 +275,86 @@ public class Main{
 }
 
 
+import java.util.*;
+interface Product
+{
+  void ProductDetails ();
+  void show_Bill (int summ);
+}
+class Customer implements Product
+{
+  int sum;
+    ArrayList < Integer > List = new ArrayList <> ();
+  Scanner cs = new Scanner (System.in);
+  public void getDetails (int num)
+  {
+    int id[] = new int[num];
+    String name[] = new String[num];
+    for (int i = 0; i < num; i++)
+      {
+    id[i] = cs.nextInt ();
+    name[i] = cs.next ();
+    ProductDetails ();
+      }
+    showDetails (id, name, num);
+  }
+  public void ProductDetails ()
+  {
+    int items = cs.nextInt ();
+    String proname[] = new String[items];
+    int cost[] = new int[items];
+    sum = 0;
+    for (int j = 0; j < items; j++)
+      {
+    proname[j] = cs.next ();
+    cost[j] = cs.nextInt ();
+    sum = sum + cost[j];
+      }
+    List.add (sum);
+  }
+  public void showDetails (int id[], String name[], int num)
+  {
+    for (int l = 0; l < num; l++)
+      {
+    System.out.println ("id:" + id[l]);
+    System.out.println ("name:" + name[l]);
+    show_Bill (List.get (l));
+      }
+  }
+  public void show_Bill (int summ)
+  {
+    if (summ <= 10000)
+      {
+    System.out.println ("bill:" + summ);
+      }
+    else if (summ > 10000 && summ <= 30000)
+      {
+    summ = summ + ((summ * 5) / 100);
+    System.out.println ("bill:" + summ);
+      }
+    else if (summ > 30000 && summ <= 50000)
+      {
+    summ = summ + ((summ * 7) / 100);
+    System.out.println ("bill:" + summ);
+      }
+    else
+      {
+    summ = summ + ((summ * 9) / 100);
+    System.out.println ("bill:" + summ);
+      }
+  }
+}
+
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    int number = sc.nextInt ();
+    Customer cs = new Customer ();
+      cs.getDetails (number);
+  }
+}
+
+
 
