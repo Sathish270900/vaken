@@ -1,0 +1,278 @@
+inheritance
+
+
+import java.util.*;
+class Event{
+  protected String name,detail,organizerName,type;
+  Event(){
+      //System.out.print("");
+  }
+  public Event(String name, String detail,String type,String organizerName){
+      this.name=name;
+        this.detail=detail;
+        this.type=type;
+        this.organizerName=organizerName;
+  }
+}
+class Exhibition extends Event{
+    private int noofStalls;
+    
+    public void setStalls(int newval){
+        noofStalls = newval;
+        
+    }
+    public int getStalls(){
+        return noofStalls;
+    }
+    Exhibition(){
+        
+    }
+    public Exhibition(String name, String detail,String type,String organizerName,int noofStalls){
+        this.noofStalls = noofStalls;
+        System.out.print(name+" "+detail+" "+type+" "+organizerName+" "+noofStalls);
+    }
+}
+class StageEvents  extends Exhibition {
+    private int noofSeats;
+    
+    public void setSeats(int newvalue){
+        noofSeats = newvalue;
+    }
+    public int getSeats(){
+        return noofSeats;
+    }
+    
+    public StageEvents(String name, String detail,String type,String organizerName,int noofSeats){
+      this.noofSeats=noofSeats;
+    }
+}
+public class Main
+{
+    public static void main(String[] args) {
+           Scanner sc = new Scanner(System.in);
+           String fu = sc.nextLine();
+           String[] arr = fu.split(",");
+           Event ev = new Event(arr[0],arr[1],arr[2],arr[3]);
+           int vel= Integer.parseInt(arr[4]);
+           
+          Exhibition ve = new Exhibition(arr[0],arr[1],arr[2],arr[3],vel);
+          
+    }
+}
+
+
+Rotate Array
+
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    int n = sc.nextInt ();
+    int arr[] = new int[n];
+    for (int i = 0; i < n; i++)
+      {
+    arr[i] = sc.nextInt ();
+      }
+    Rottate (arr, n);
+  }
+  public static void Rottate (int arr1[], int len)
+  {
+    for (int j = 0; j < len - 1; j++)
+      {
+    System.out.print (arr1[j + 1] + " ");
+      }
+    System.out.print (arr1[0] + " ");
+  }
+}
+
+
+
+lower and uppercase
+
+
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    String s = sc.next();
+    int len = s.length();
+    String upper="";
+    String lower="";
+    for(int i=0;i<len;i++)
+    {
+        if(s.charAt(i)>=97 && s.charAt(i)<=122){
+            lower+=s.charAt(i);
+        } 
+        else{
+            upper+=s.charAt(i);
+        }
+    }
+    System.out.print(lower+""+upper);
+  }
+}
+
+
+
+sum of odd and even position
+
+
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    int n = sc.nextInt();
+    int arr[] = new int[n];
+    
+    int odd=0,eve=0;
+    for(int i=0;i<n;i++){
+        arr[i]=sc.nextInt();
+    }
+    if(n%2==0){
+    for(int i =0;i<n;i++)
+    {
+        if(i%2==0)
+        {
+            eve+=arr[i];
+        }
+        else{
+            odd +=arr[i];
+        }
+    }
+    System.out.print(eve + " "+odd);
+    }
+    else{
+        System.out.println("Enter valid number");
+    }
+  }
+}
+
+
+
+Growing number and string
+
+
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sc = new Scanner (System.in);
+    String s = sc.nextLine();
+    String S[] = s.split(" ");
+    String num = (S[0]);
+    String ch = S[1];
+    boolean flag1=true;
+    boolean flag2 = true;
+    for(int i =0;i<S[0].length()-1;i++)
+    {
+        if(num.charAt(i)<num.charAt(i+1)){
+            flag1=true;
+        }
+        else{
+            flag1=false;
+            break;
+        }
+    }
+    if(flag1){
+       System.out.println("Growing  number..");
+    }
+    else{
+        System.out.println("Not Growing number..");
+    }
+    
+    for(int i =0;i<S[1].length()-1;i++)
+    {
+        if(num.charAt(i)<num.charAt(i+1)){
+            flag2=true;
+        }
+        else{
+            flag2=false;
+            break;
+        }
+    }
+    if(flag2){
+       System.out.println("Growing  string..");
+    }
+    else{
+        System.out.println("Not Growing string..");
+    }
+  }
+}
+
+
+
+Flight ticket
+
+
+
+import java.util.*;
+interface Airfare 
+{
+    public double calculateAmount(int hours,double costPerHour);
+}
+class AirIndia implements Airfare{
+    int hours;
+    double costPerHour;
+    public double calculateAmount( int hours,double costPerHour){
+      this.hours = hours;
+      this.costPerHour=costPerHour;
+      return  hours*costPerHour;
+    }
+}
+class KingFisher implements Airfare{
+    int hours;
+    double costPerHour;
+    public double calculateAmount(int hours,double costPerHour){
+        this.hours = hours;
+      this.costPerHour=costPerHour;
+      return  hourscostPerHour4;
+    }
+}
+
+class Indigo implements Airfare{
+    int hours;
+    double costPerHour;
+    public double calculateAmount(int hours,double costPerHour){
+        this.hours = hours;
+      this.costPerHour=costPerHour;
+      return  hourscostPerHour8;
+    }
+}
+
+public class Main{
+    public static void main(String [] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int hrs = sc.nextInt();
+        int amount = sc.nextInt();
+        if(n==1){
+            AirIndia ai = new AirIndia();
+            System.out.printf("%.2f",ai.calculateAmount(hrs,(double)amount));
+        }else if(n==2)
+        {
+            KingFisher kf = new KingFisher();
+             System.out.printf("%.2f",kf.calculateAmount(hrs,(double)amount));
+        }else if(n==3)
+        {
+            Indigo id=new Indigo();
+             System.out.printf("%.2f",id.calculateAmount(hrs,(double)amount));
+        }
+        else
+        {
+            System.out.println("Enter the valid number..");
+        }
+    } 
+}
+
+
+
