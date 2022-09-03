@@ -16,7 +16,7 @@
     </div>
     <div id="grid2">
         <img id="mg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAkzGorc473k2IEYTGwaXjE4B2gN_J3bQGyISnMXYh&s" alt="">
-        <h2 id="cityName">Madurai</h2>
+        <h2 id="cityName">Sivagangai</h2>
         <h2 id="celsius">26 C<sup>0</sup></h2>
     </div>
 </body>
