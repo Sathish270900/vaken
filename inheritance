@@ -1,0 +1,245 @@
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int n = inp.nextInt();
+         String name=inp.next();
+         String dob=inp.next();
+        if(n==1){
+            String dep=inp.next();
+            int attend =inp.nextInt();
+            Person p = new Person(name,dob);
+            Student std = new Student(dep,attend);
+            System.out.println(p);
+            System.out.println(std);
+        }
+        else if(n==2){
+            String sub=inp.next();
+            int marks =inp.nextInt();
+            int salare = inp.nextInt();
+            Person p = new Person(name, dob);
+            TeachingStaff ts=new TeachingStaff(sub,marks);
+            Staff s=new Staff(salare);
+            System.out.println(p);
+            System.out.println(ts);
+        }
+        else if(n==3){
+            String lab=inp.next();
+          //  inp.nextLine();
+            int exp = inp.nextInt();
+            int salare =inp.nextInt();
+            Person p = new Person(name,dob);
+            NonTeachingStaff nts = new NonTeachingStaff(lab,exp);
+            Staff s = new Staff(salare);
+            System.out.println(p);
+            System.out.println(nts);
+        }
+    }
+}
+class Person{
+    String name;
+    String dob;
+    Person(){}
+    Person(String name , String dob){
+        this.name = name;
+        this.dob = dob;
+    }
+    public String toString(){
+        return "Name : "+this.name+"\nDOB :"+this.dob;
+    }
+}
+class Student extends Person{
+    String dep ;
+    int attend ;
+    Student(String dep , int attend){
+        this.dep =dep;
+        this.attend = attend;
+    }
+    public String ans(){
+        return this.attend > 75 ? "Yes": "No";
+    }
+    public String toString(){
+        return "Department :"+this.dep+"\nEligible :"+ans();
+    }
+}
+class Staff extends Person{
+    static int salary;
+    Staff(){}
+    Staff(int salare){
+        salary = salare;
+    }
+}
+class TeachingStaff extends Staff{
+    String subject;
+    int percent ;
+    TeachingStaff(String subject , int percent){
+        this.subject = subject;
+        this.percent = percent;
+    }
+    public double setNewSalary(){
+        return  (percent/10)*(salary/100)+salary;
+    }
+    public String toString(){
+        return "Old salary :"+salary+"\nsubject :"+this.subject+"\nnew salary :"+setNewSalary();
+    }
+}
+class NonTeachingStaff extends Staff{
+    String lab;
+    int exp;
+    NonTeachingStaff(String lab,int exp){
+        this.lab=lab;
+        this.exp=exp;
+    }
+    public int setNewSalary(){
+        return (exp)*(salary/100)+salary;
+    }
+    public String toString(){
+        return "Old salary :"+salary+"\nLab :"+this.lab+"\nnew salary :"+setNewSalary();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+public class Main{
+    public static void main(String [] args){
+        Scanner inp = new Scanner(System.in);
+        int n= inp.nextInt();
+        String name = inp.next();
+        String accNo = inp.next();
+        Account acc;
+        if(n==1){
+             acc = new CurrentAccount(inp.nextInt());
+        }
+        else{
+             acc = new SavingsAccount(inp.nextInt());
+        }
+        String startDate = inp.next();
+        String endDate = inp.next();
+        if(n==1){
+            String arr1[]=startDate.split("/");
+            String arr2[]=endDate.split("/");
+            int date = Integer.parseInt(arr1[2])-Integer.parseInt(arr2[2]);
+            date = date>0? date: 0-date;
+            System.out.println((acc.calculateInterest(date)));
+        }
+        else{
+            String arr1[]=startDate.split("/");
+            String arr2[]=endDate.split("/");
+            int date = Integer.parseInt(arr1[2])-Integer.parseInt(arr2[2]);
+            date = date>0? date: 0-date;
+            System.out.println((acc.calculateInterest(date)));
+        }
+    } 
+}
+abstract class Account{
+    int amount;
+    abstract double calculateInterest(int date);
+}
+class CurrentAccount extends Account{
+     int amount;
+     CurrentAccount(int amount){
+         this.amount=amount;
+     }
+    double calculateInterest(int date){
+        double ans = (amount12date)/100;
+        return ans;
+    }
+}
+class SavingsAccount extends Account{
+    int amount;
+    SavingsAccount(int amount){
+        this.amount=amount;
+    }
+    double calculateInterest(int date){
+        double ans = (amount5date)/100;
+        return ans;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+class VisaCard{
+    String name;
+    String ccv;
+    
+    public Double ComputeRewardPoints(String purchasetype, double amount){
+        
+          double ans = (amount*1)/100;
+          return ans;
+    }
+}
+class Hpvisacard extends VisaCard{
+     public Double ComputeRewardPoints(String purchasetype, double amount){
+        
+          double ans = (amount*1)/100;
+          if(purchasetype.equals("fuel")){
+              ans+=10;
+          }
+          return ans;
+          
+    }
+}
+public class Main
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        VisaCard obj = new VisaCard();
+        Hpvisacard obj1 = new Hpvisacard();
+        obj.name=sc.next();
+        obj.ccv = sc.next();
+        int amo =sc.nextInt();
+        String fu = sc.next();
+         int n = sc.nextInt();
+         if(n==1){
+          System.out.println(obj.ComputeRewardPoints(fu,amo));
+          
+         }
+         else if(n==2){
+              System.out.println(obj1.ComputeRewardPoints(fu,amo));
+         }
+         else{
+             System.out.println("Enter 1 or 2");
+         }
+    }
+}
